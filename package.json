@@ -1,0 +1,47 @@
+{
+  "name": "komodo-ssr-engine-vue",
+  "version": "1.0.0",
+  "description": "Vue 3 SSR rendering API for Komodo platforms",
+  "type": "module",
+  "engines": {
+    "node": ">=26.0.0"
+  },
+  "scripts": {
+    "dev": "bun run server.ts",
+    "build": "echo 'No build step required for Bun.serve'",
+    "preview": "bun run server.ts",
+    "bootstrap": "bun install",
+    "up": "bun update --latest",
+    "fresh": "bun run clean && bun install",
+    "clean": "rm -rf node_modules bun.lock",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "keywords": [
+    "vue",
+    "ssr",
+    "server-side-rendering",
+    "bun"
+  ],
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.758.0",
+    "@aws-sdk/client-cloudfront": "^3.758.0",
+    "@komodo-forge-sdk/typescript": "github:rdevitto86/komodo-forge-sdk-ts",
+    "@vue/server-renderer": "^3.5.39",
+    "vue": "^3.5.39"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.2",
+    "@types/bun": "latest",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "oxlint": "^1.73.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.7",
+    "vitest": "^3.0.5"
+  }
+}

@@ -1,0 +1,102 @@
+openapi: 3.0.3
+info:
+  title: Komodo Vue SSR Engine API
+  description: Generic Vue Server-Side Rendering API for the Komodo platform
+  version: 1.0.0
+  contact:
+    name: Komodo Platform Team
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+paths:
+  /render:
+    post:
+      summary: Render Vue component to HTML
+      description: Accepts a Vue component template or component string and renders it to HTML on the server
+      operationId: renderComponent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                component:
+                  type: string
+                  description: HTML string of a Vue component (alternative to template)
+                  example: "<span>Hello {{ name }}</span>"
+                template:
+                  type: string
+                  description: Vue template string to render
+                  example: "<div>{{ message }}</div>"
+                props:
+                  type: object
+                  description: Props to pass to the component
+                  additionalProperties: true
+                  example:
+                    message: "Hello World"
+                    name: "John"
+              required:
+                - component
+      responses:
+        "200":
+          description: Successfully rendered component
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  html:
+                    type: string
+                    description: Rendered HTML string
+                    example: "<div>Hello World</div>"
+        "400":
+          description: Bad request - missing required fields
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Either 'component' or 'template' must be provided"
+        "500":
+          description: Internal server error - rendering failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Failed to render component"
+                  message:
+                    type: string
+                    example: "Detailed error message"
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns the health status of the SSR engine
+      operationId: healthCheck
+      responses:
+        "200":
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  service:
+                    type: string
+                    example: komodo-ssr-engine-vue
+tags:
+  - name: Rendering
+    description: Vue component rendering operations
+  - name: Health
+    description: Service health checks

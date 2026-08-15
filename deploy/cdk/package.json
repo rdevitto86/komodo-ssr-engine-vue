@@ -1,0 +1,26 @@
+{
+  "name": "komodo-ssr-engine-vue-cdk",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "lib/main.js",
+  "types": "lib/main.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "fresh": "rm -rf node_modules && bun install",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write ."
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "aws-cdk": "^2.1129.0",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.261.0",
+    "constructs": "^10.6.0",
+    "komodo-forge-sdk-ts": "github:rdevitto86/komodo-forge-sdk-ts"
+  }
+}
