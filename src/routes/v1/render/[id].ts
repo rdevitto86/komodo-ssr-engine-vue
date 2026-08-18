@@ -1,5 +1,5 @@
-import { createSSRApp, h } from 'vue'
 import { renderToString } from '@vue/server-renderer'
+import { createSSRApp, h } from 'vue'
 
 const app = createSSRApp({
   setup() {

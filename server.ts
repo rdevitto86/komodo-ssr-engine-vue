@@ -1,7 +1,7 @@
+import { Cache } from './src/cache'
 import { healthCheck } from './src/routes/health'
 import { handler as rawHandler } from './src/routes/v1/raw/[id]'
 import { handler as renderHandler } from './src/routes/v1/render/[id]'
-import { Cache } from './src/cache'
 
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';

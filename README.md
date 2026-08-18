@@ -16,7 +16,7 @@ High-performance Vue 3 Server-Side Rendering (SSR) API for the Komodo platform, 
 - **Native Bun**: Built-in HTTP server with no build step required
 - **TypeScript**: Full type safety across the codebase
 - **Docker Support**: Single-stage builds with Bun runtime
-- **Linting**: Biome and oxlint for code quality
+- **Linting**: Biome for code quality
 
 ## Installation
 
@@ -92,8 +92,7 @@ komodo-ssr-engine-vue/
 ├── docker-compose.yaml  # Docker Compose configuration
 ├── package.json         # Dependencies and scripts
 ├── tsconfig.json        # TypeScript configuration
-├── biome.json           # Biome linting configuration
-└── oxlint.json          # oxlint configuration
+└── biome.json           # Biome linting configuration
 ```
 
 ## License

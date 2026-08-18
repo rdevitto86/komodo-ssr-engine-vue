@@ -95,7 +95,7 @@ export class Cache<T> {
       }
     }
 
-    keysToDelete.forEach(key => this._cache.delete(key));
+    keysToDelete.forEach(key => { this._cache.delete(key); });
     return keysToDelete.length;
   }
 
