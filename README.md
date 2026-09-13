@@ -1,4 +1,4 @@
-# Komodo Vue SSR Engine
+# Komodo UI SSR Engine
 
 High-performance Vue 3 Server-Side Rendering (SSR) API for the Komodo platform, powered by Bun.serve.
 
